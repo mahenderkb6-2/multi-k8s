@@ -19,7 +19,7 @@ jobs:
       - run: docker build -t cygnetops/multi-worker ./worker
  
       - run: docker push cygnetops/multi-client               #should be the dockerhub username
-      - run: docker push cygnetops/multi-nginx
+      - run: docker push cygnetops/multi-nginx                #should be the dockerhub username
       - run: docker push cygnetops/multi-server
       - run: docker push cygnetops/multi-worker
  
