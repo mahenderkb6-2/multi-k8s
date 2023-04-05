@@ -10,18 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - run: docker build -t mahenderkb6/react-test -f ./client/Dockerfile.dev ./client
-      - run: docker run -e CI=true mahenderkb6/react-test npm test
+      - run: docker build -t cygnetops/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker run -e CI=true cygnetops/react-test npm test
  
-      - run: docker build -t mahenderkb6/multi-client ./client  #should be the dockerhub username
-      - run: docker build -t mahenderkb6/multi-nginx ./nginx    #should be the dockerhub username
-      - run: docker build -t mahenderkb6/multi-server ./server
-      - run: docker build -t mahenderkb6/multi-worker ./worker
+      - run: docker build -t cygnetops/multi-client ./client  #should be the dockerhub username
+      - run: docker build -t cygnetops/multi-nginx ./nginx    #should be the dockerhub username
+      - run: docker build -t cygnetops/multi-server ./server
+      - run: docker build -t cygnetops/multi-worker ./worker
  
-      - run: docker push mahenderkb6/multi-client               #should be the dockerhub username
-      - run: docker push mahenderkb6/multi-nginx
-      - run: docker push mahenderkb6/multi-server
-      - run: docker push mahenderkb6/multi-worker
+      - run: docker push cygnetops/multi-client               #should be the dockerhub username
+      - run: docker push cygnetops/multi-nginx
+      - run: docker push cygnetops/multi-server
+      - run: docker push cygnetops/multi-worker
  
       # - name: Generate deployment package
       #   run: zip -r deploy.zip . -x '*.git*'
