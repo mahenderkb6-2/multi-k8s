@@ -14,7 +14,7 @@ jobs:
       - run: docker run -e CI=true mahenderkb6/react-test npm test
  
       - run: docker build -t mahenderkb6/multi-client ./client  #should be the dockerhub username
-      - run: docker build -t mahenderkb6/multi-nginx ./nginx    #should be the dockerhub username
+      - run: docker build -t mahenderkb6/multi-nginx ./nginx    
       - run: docker build -t mahenderkb6/multi-server ./server
       - run: docker build -t mahenderkb6/multi-worker ./worker
  
